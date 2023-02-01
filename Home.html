@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Sorrento by the Sea</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script>
+        var datefield = document.createElement("input")
+        datefield.setAttribute("type", "date")
+        if (datefield.type != "date") { // if browser doesn't support input type="date", load files for jQuery UI Date Picker
+            document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+            document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+            document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
+        }
+    </script>
+    
+    <script>
+        if (datefield.type != "date") { // if browser doesn't support input type="date", initialize date picker widget:
+            jQuery(function($) { // on document.ready
+                $('#start_date').datepicker({
+                    dateFormat: 'yy-mm-dd'
+                });
+                $('#end_date').datepicker({
+                    dateFormat: 'yy-mm-dd'
+                });
+            })
+        }
+    </script>
+                    
+</head>
+<body>
+    <header>
+        <div class="banner">
+        </div>
+        <nav>
+            <div class="topnav">
+                <a href="Home.html" id="current-page">Home</a>
+                <a href="html/About.html">About</a>
+                <a href="html/Area.html">Mornington</a>
+                <a href="html/Contact.html">Contact</a>
+            </div>
+        </nav>     
+    </header>
+
+    <main>
+        <div class="logo">
+            <a href="../Home.html" ><img src="images/logo.png" alt="sorrento by the sea logo"/></a>
+       </div>
+        <h1>Home</h1>
+        <div class="row">
+            <div class="column2">
+                <h2>Testimonials</h2>
+                <p>"So sorry we had to go home after only one night. We will definitely stay two nights next time!"</p>
+                <p>"This apartment is close to everything. We didn't need the car as the walks were amazing"</p>
+                <p>"Your attention to detail made our stay so relaxed and comfortable. It was such a shame we had to drive back to our little flat, which is smaller than your apartment. We want to move in!"</p>
+                <p>"Cosy and comfortable. We imagined we owned it and enjoyed being spoilt. Thank you."</p>
+                <p>"What a magical stay at such an amazing place. Completely self-contained and very private. We loved it and will return again and again."</p>
+                <p>"Never felt so spoilt. A perfect get away and so close to everything. We had the best bath ever!"</p>
+                <p>"A few minutes’ walk from the beach, picnic basket in hand and towel over the shoulder - can't think of anything better except that wonderful breakfast. That bacon is the best in Melbourne!"</p>
+                <p>"Relaxing in that sunny garden watching our dog chasing balls. Let me stay forever!"</p>
+            </div>
+            <div class="column2">
+                <h2>Pricing </h2>
+                <table>
+                    <tr>
+                        <td>1st June - 31st August</td>
+                        <td>1st September - 18th December</td>
+                        <td>1st February - 31st May</td>
+                        <td>19th December – 31st January</td>
+                    </tr>
+                    <tr>
+                        <td>$200 per night</td>
+                        <td>$220 per night</td>
+                        <td>$220 per night</td>
+                        <td>$250 per night</td>
+                    </tr>         
+                </table>
+
+                <p class="availability">
+                    <label for="start_date">Check In </label>
+                    <input type="date" id="start_date" required>
+                    <label for="end_date">Check Out </label>
+                    <input type="date" id="end_date" required>
+                    <button type="submit" class="btn btn-primary" id="priceButton">Submit</button>
+                    <p id="Price"></p>
+                </p>
+                <img src="images/paypal_small.png" alt="paypal icon">
+
+            </div>
+            <script src="scripts/dateRangeCalculator.js"></script>
+        </div>
+
+        <div class="row">
+            <div class="slideshowContainer">
+                <div class="slide">
+                    <img src="" alt="" />
+                    <p class="description"></p>
+                </div>
+                <span class="previous">Previous</span>
+                <span class="next">Next</span>
+            </div>
+            <script src="scripts/slideshow.js"></script>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="column3">
+            <h4>Contact Information</h4>
+            <p>Information and Bookings <br>
+                0435 123 456<br>
+                42 Holyrood Avenue<br>
+                Sorrento VIC 3943</p>
+        </div>
+        <div class="column3">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="html/About.html">About</a></li>
+                <li><a href="html/Area.html">Mornington</a></li>
+                <li><a href="html/Contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="column3">
+            <ul class="social-links">
+                <li><a href="#"><img src="images/facebook_small.png" alt="Facebook link"></a></li>
+                <li><a href="#"><img src="images/instagram_small.png" alt="Instagram link"></a></li>
+                <li><a href="#"><img src="images/twitter_small.png" alt="Twitter link"></a></li>
+                <li><a href="#"><img src="images/youtube-variation_small.png" alt="YouTube link"></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
